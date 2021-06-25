@@ -417,6 +417,7 @@ body._pc .select__item:hover {
           align-items: center;
   text-transform: uppercase;
   padding-top: 21px;
+  padding-bottom: 20px;
   opacity: 0;
 }
 
@@ -566,8 +567,8 @@ body._lock {
 
 .fullscreen {
   height: 100vh;
-  background: -o-radial-gradient(50% 38.82%, 189.96% 61.18%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%), url(../img/fullscreen.jpg) center/cover no-repeat;
-  background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%), url(../img/fullscreen.jpg) center/cover no-repeat;
+  background: -o-radial-gradient(50% 38.82%, 189.96% 61.18%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%), url(../img/fullscreen.png) center/cover no-repeat;
+  background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%), url(../img/fullscreen.png) center/cover no-repeat;
 }
 
 .fullscreen__content {
@@ -664,7 +665,7 @@ h4 {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 .hello__content._anim .hello__title {
@@ -791,13 +792,17 @@ h4 {
   }
 }
 
+body._pc .hello__content {
+  padding-bottom: 50px;
+}
+
 body._pc .hello__footer-content:hover {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
 
 .about {
-  background: url(../img/about/bg2.jpg) center/cover no-repeat;
+  background: url(../img/about/bg2.png) center/cover no-repeat;
 }
 
 .about__gradient {
@@ -968,8 +973,8 @@ body._pc .hello__footer-content:hover {
 }
 
 .features {
-  background: -o-radial-gradient(30.85% 53.65%, 51.1% 80.48%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url(../img/bg3.jpg) center/cover no-repeat;
-  background: radial-gradient(51.1% 80.48% at 30.85% 53.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url(../img/bg3.jpg) center/cover no-repeat;
+  background: -o-radial-gradient(30.85% 53.65%, 51.1% 80.48%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url(../img/bg3.png) center/cover no-repeat;
+  background: radial-gradient(51.1% 80.48% at 30.85% 53.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url(../img/bg3.png) center/cover no-repeat;
   -webkit-transform: translate(-100%, 0px);
       -ms-transform: translate(-100%, 0px);
           transform: translate(-100%, 0px);
@@ -1129,8 +1134,8 @@ body._pc .hello__footer-content:hover {
 }
 
 .system {
-  background: -o-radial-gradient(64.32% 47.1%, 33.26% 45%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/bg4.jpg) center/cover no-repeat;
-  background: radial-gradient(33.26% 45% at 64.32% 47.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/bg4.jpg) center/cover no-repeat;
+  background: -o-radial-gradient(64.32% 47.1%, 33.26% 45%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/bg4.png) center/cover no-repeat;
+  background: radial-gradient(33.26% 45% at 64.32% 47.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/bg4.png) center/cover no-repeat;
 }
 
 .system__content {
@@ -1145,6 +1150,7 @@ body._pc .hello__footer-content:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 50px;
 }
 
 .system__header {
@@ -1261,8 +1267,8 @@ body._pc .hello__footer-content:hover {
 }
 
 .quotes {
-  background: -o-radial-gradient(19.56% 37.57%, 78.66% 177.87%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/comment/bg5.jpg) center/cover no-repeat;
-  background: radial-gradient(78.66% 177.87% at 19.56% 37.57%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/comment/bg5.jpg) center/cover no-repeat;
+  background: -o-radial-gradient(19.56% 37.57%, 78.66% 177.87%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/comment/bg5.png) center/cover no-repeat;
+  background: radial-gradient(78.66% 177.87% at 19.56% 37.57%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/comment/bg5.png) center/cover no-repeat;
 }
 
 .quotes__content {
@@ -2413,14 +2419,14 @@ body._pc .last__link:hover {
   }
 
   .contact {
-    background: url(../img/contact.jpg) -100% 30%/30% 50% no-repeat;
+    background: url(../img/contact.png) -100% 30%/30% 50% no-repeat;
   }
 
   .contact._anim {
     -webkit-transition: all 0.8s ease 0s;
     -o-transition: all 0.8s ease 0s;
     transition: all 0.8s ease 0s;
-    background: url(../img/contact.jpg) 0% 30%/30% 50% no-repeat;
+    background: url(../img/contact.png) 0% 30%/30% 50% no-repeat;
   }
 
   .contact__content {
