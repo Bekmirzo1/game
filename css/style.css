@@ -278,59 +278,6 @@ a {
   width: 100%;
 }
 
-body._pc .btn::after {
-  content: "";
-  display: block;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  position: absolute;
-  background-color: #1a1917;
-  z-index: -1;
-}
-
-body._pc .btn span {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .btn:hover {
-  color: #ffb548;
-}
-
-body._pc .btn:hover span {
-  background-color: #ffb548;
-}
-
-body._pc .btn:hover::after {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-body._pc .btn_r::after {
-  top: 0;
-  bottom: 0;
-  right: 100%;
-  left: 0;
-}
-
-body._pc .btn_rl::after {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  right: 50%;
-}
-
-body._pc .btn_tb::after {
-  top: 50%;
-  bottom: 50%;
-  left: 0;
-  right: 0;
-}
-
 .select {
   position: relative;
 }
@@ -392,17 +339,6 @@ body._pc .btn_tb::after {
 
 .select__item:last-child {
   margin-bottom: 0;
-}
-
-body._pc .select__item {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .select__item:hover {
-  color: #ffb548;
-  font-weight: 700;
 }
 
 .header__content {
@@ -483,50 +419,6 @@ body._pc .select__item:hover {
   display: none;
 }
 
-body._pc .header__logo img {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .header__logo img:hover {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-body._pc .header__icon {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .header__icon::before {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .header__icon:hover::before {
-  text-shadow: 0px 0px 10px #010101;
-  font-size: 110%;
-}
-
-body._pc .header__icon:active::before {
-  text-shadow: 0px 0px 5px #010101;
-  font-size: 100%;
-}
-
-body._pc .menu__link {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .menu__link:hover {
-  color: #ffb548;
-}
-
 html,
 body {
   background-color: #080a0b;
@@ -567,8 +459,8 @@ body._lock {
 
 .fullscreen {
   height: 100vh;
-  background: -o-radial-gradient(50% 38.82%, 189.96% 61.18%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%), url(../img/fullscreen.png) center/cover no-repeat;
-  background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%), url(../img/fullscreen.png) center/cover no-repeat;
+  background: -o-radial-gradient(50% 38.82%, 189.96% 61.18%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%), url(../img/fullscreen.jpg) center/cover no-repeat;
+  background: radial-gradient(189.96% 61.18% at 50% 38.82%, rgba(255, 181, 72, 0) 0%, rgba(52, 44, 29, 0.80319) 73.22%, #08090a 99.74%), url(../img/fullscreen.jpg) center/cover no-repeat;
 }
 
 .fullscreen__content {
@@ -725,6 +617,7 @@ h4 {
   -webkit-transform: translate(0px, 120%);
       -ms-transform: translate(0px, 120%);
           transform: translate(0px, 120%);
+  margin-bottom: 20px;
 }
 
 .hello__btn {
@@ -763,11 +656,6 @@ h4 {
           animation: arrow-down 1.5s ease 0s infinite alternate;
 }
 
-.hello__footer-content:active {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-
 @-webkit-keyframes arrow-down {
   0% {
     -webkit-transform: translate(0px, 0px);
@@ -792,17 +680,8 @@ h4 {
   }
 }
 
-body._pc .hello__content {
-  padding-bottom: 50px;
-}
-
-body._pc .hello__footer-content:hover {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-
 .about {
-  background: url(../img/about/bg2.png) center/cover no-repeat;
+  background: url(../img/about/bg2.jpg) center/cover no-repeat;
 }
 
 .about__gradient {
@@ -973,8 +852,8 @@ body._pc .hello__footer-content:hover {
 }
 
 .features {
-  background: -o-radial-gradient(30.85% 53.65%, 51.1% 80.48%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url(../img/bg3.png) center/cover no-repeat;
-  background: radial-gradient(51.1% 80.48% at 30.85% 53.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url(../img/bg3.png) center/cover no-repeat;
+  background: -o-radial-gradient(30.85% 53.65%, 51.1% 80.48%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url(../img/bg3.jpg) center/cover no-repeat;
+  background: radial-gradient(51.1% 80.48% at 30.85% 53.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080a0b 99.74%), url(../img/bg3.jpg) center/cover no-repeat;
   -webkit-transform: translate(-100%, 0px);
       -ms-transform: translate(-100%, 0px);
           transform: translate(-100%, 0px);
@@ -1134,8 +1013,8 @@ body._pc .hello__footer-content:hover {
 }
 
 .system {
-  background: -o-radial-gradient(64.32% 47.1%, 33.26% 45%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/bg4.png) center/cover no-repeat;
-  background: radial-gradient(33.26% 45% at 64.32% 47.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/bg4.png) center/cover no-repeat;
+  background: -o-radial-gradient(64.32% 47.1%, 33.26% 45%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/bg4.jpg) center/cover no-repeat;
+  background: radial-gradient(33.26% 45% at 64.32% 47.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080a0b 99.74%), url(../img/bg4.jpg) center/cover no-repeat;
 }
 
 .system__content {
@@ -1684,64 +1563,6 @@ body._pc .hello__footer-content:hover {
   color: #fff !important;
 }
 
-body._pc .footer__logo {
-  padding: 0.3%;
-}
-
-body._pc .footer__logo img {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .footer__logo img:hover {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-body._pc .footer__icon {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .footer__icon._icon-facebook:hover {
-  color: #3b5998;
-}
-
-body._pc .footer__icon._icon-twitter:hover {
-  color: #00acee;
-}
-
-body._pc .footer__icon._icon-youtube:hover {
-  color: #ff1313;
-}
-
-body._pc .footer__icon._icon-twitch:hover {
-  color: #6441a5;
-}
-
-body._pc .footer-menu__link {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .footer-menu__link:hover {
-  color: #ffb548;
-}
-
-body._pc .last__link {
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-body._pc .last__link:hover {
-  color: #ffb548;
-}
-
 @media (min-width: 767.98px) {
   .header__content {
     -webkit-transform: translate(-50%, 0);
@@ -1867,8 +1688,8 @@ body._pc .last__link:hover {
   }
 
   .contact__img {
-    background: -o-radial-gradient(50% 50%, 45.43% 53.19%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 46.15%, #080a0b 99.74%), url(../img/contact.jpg) right/cover no-repeat;
-    background: radial-gradient(45.43% 53.19% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 46.15%, #080a0b 99.74%), url(../img/contact.jpg) right/cover no-repeat;
+    background: -o-radial-gradient(50% 50%, 45.43% 53.19%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 46.15%, #080a0b 99.74%), url(../img/contact.png) right/cover no-repeat;
+    background: radial-gradient(45.43% 53.19% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 46.15%, #080a0b 99.74%), url(../img/contact.png) right/cover no-repeat;
     min-height: 230px;
     min-width: 200px;
     width: 100%;
@@ -2426,7 +2247,7 @@ body._pc .last__link:hover {
     -webkit-transition: all 0.8s ease 0s;
     -o-transition: all 0.8s ease 0s;
     transition: all 0.8s ease 0s;
-    background: url(../img/contact.png) 0% 30%/30% 50% no-repeat;
+    background: url(../img/contact.png) -35% 35%/50% 50% no-repeat;
   }
 
   .contact__content {
@@ -2531,6 +2352,183 @@ body._pc .last__link:hover {
   }
 }
 
+@media (any-hover: hover) {
+  .btn::after {
+    content: "";
+    display: block;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    position: absolute;
+    background-color: #1a1917;
+    z-index: -1;
+  }
+
+  .btn span {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .btn:hover {
+    color: #ffb548;
+  }
+
+  .btn:hover span {
+    background-color: #ffb548;
+  }
+
+  .btn:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .btn_r::after {
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+  }
+
+  .btn_rl::after {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+  }
+
+  .btn_tb::after {
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+  }
+
+  .select__item {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .select__item:hover {
+    color: #ffb548;
+    font-weight: 700;
+  }
+
+  .header__logo img {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header__logo img:hover {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  .header__icon {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header__icon::before {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header__icon:hover::before {
+    text-shadow: 0px 0px 10px #010101;
+    font-size: 110%;
+  }
+
+  .header__icon:active::before {
+    text-shadow: 0px 0px 5px #010101;
+    font-size: 100%;
+  }
+
+  .menu__link {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .menu__link:hover {
+    color: #ffb548;
+  }
+
+  .hello__content {
+    padding-bottom: 50px;
+  }
+
+  .hello__footer-content:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+
+  .footer__logo {
+    padding: 0.3%;
+  }
+
+  .footer__logo img {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .footer__logo img:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+
+  .footer__icon {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .footer__icon._icon-facebook:hover {
+    color: #3b5998;
+  }
+
+  .footer__icon._icon-twitter:hover {
+    color: #00acee;
+  }
+
+  .footer__icon._icon-youtube:hover {
+    color: #ff1313;
+  }
+
+  .footer__icon._icon-twitch:hover {
+    color: #6441a5;
+  }
+
+  .footer-menu__link {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .footer-menu__link:hover {
+    color: #ffb548;
+  }
+
+  .last__link {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .last__link:hover {
+    color: #ffb548;
+  }
+}
+
 @media (max-height: 400px) and (orientation: landscape) {
   .fullscreen {
     height: 100%;
@@ -2540,6 +2538,13 @@ body._pc .last__link:hover {
 @media (max-height: 600px) and (orientation: landscape) {
   ._full {
     height: 100%;
+  }
+}
+
+@media (any-hover: none) {
+  .hello__footer-content:active {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
   }
 }
 
@@ -2584,5 +2589,5 @@ body._pc .last__link:hover {
 
 @media (max-width: 767.98px) {
 
-  .webp .contact._anim { background: url(../img/contact.webp) 0% 30%/30% 50% no-repeat; }
+  .webp .contact._anim { background: url(../img/contact.webp) -35% 35%/50% 50% no-repeat; }
 }
