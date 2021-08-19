@@ -72,7 +72,7 @@ if (scrollDown) {
                 top: flsBottom,
                 behavior: 'smooth'
             })
-            // e.preventDefault();
+            e.preventDefault();
         });
     }
 };
@@ -143,9 +143,8 @@ if (sliders.length > 0) {
 // *Spoller
 const spollersArray = document.querySelectorAll('[data-spollers]');
 if (spollersArray.length > 0) {
-    // Инициализация обычных спойлеров
-    initSpollers(spollersArray);
     // Инициализация
+    initSpollers(spollersArray);
     function initSpollers(spollersArray, matchMedia = false) {
         spollersArray.forEach(spollersBlock => {
             spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
@@ -338,7 +337,7 @@ function lazyScrollCheck() {
 		delete lazyImagesPositions[imgIndex]
 	}
 }
-
+// Dinamic Adaptive
 const parent_original = document.querySelector('.contact__content');
 const parent = document.querySelector('.contact');
 const item = document.querySelector('.contact__img');
