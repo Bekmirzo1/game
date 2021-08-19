@@ -17,6 +17,10 @@ testWebP(function (support) {
         document.querySelector('body').classList.add('no-webp');
     }
 });
+var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
+if (!isMobile.any()) {
+    document.body.classList.add('_pc')
+};
 // *Burger
 let menuBody = document.querySelector('.menu__body');
 let iconMenu = document.querySelector('.icon-menu');
@@ -28,33 +32,36 @@ if (iconMenu) {
     })
 }
 ;
-const selects = document.querySelectorAll('.select');
-for (let index = 0; index < selects.length; index++) {
-    const select = selects[index];
-    const selectHeader = select.querySelector('.select__header');
-    let selectCurrent = select.querySelector('.select__current');
-    const selectItems = select.querySelectorAll('.select__item');
-    selectHeader.addEventListener('click', function () {
-        select.classList.toggle('_active');
-    });
-    for (let index = 0; index < selectItems.length; index++) {
-        const selectItem = selectItems[index];
-        selectItem.addEventListener('click', function (e) {
-            e.stopPropagation();
-            const selectItemText = selectItem.textContent;
-            if (selectCurrent) {
-                selectCurrent.textContent = selectItemText;
+if (!document.body.classList.contains('_pc')) {
+    const selects = document.querySelectorAll('.select');
+    for (let index = 0; index < selects.length; index++) {
+        const select = selects[index];
+        const selectHeader = select.querySelector('.select__header');
+        let selectCurrent = select.querySelector('.select__current');
+        const selectItems = select.querySelectorAll('.select__item');
+        selectHeader.addEventListener('click', function () {
+            select.classList.toggle('_active');
+        });
+        for (let index = 0; index < selectItems.length; index++) {
+            const selectItem = selectItems[index];
+            selectItem.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const selectItemText = selectItem.textContent;
+                if (selectCurrent) {
+                    selectCurrent.textContent = selectItemText;
+                    select.classList.remove('_active');
+                }
+            });
+        }
+        document.addEventListener('click', function (e) {
+            const selectIcon = select.querySelector('.select__icon');
+            if (e.target !== selectHeader && e.target !== selectCurrent && e.target !== selectIcon) {
                 select.classList.remove('_active');
             }
         });
     }
-    document.addEventListener('click', function (e) {
-        const selectIcon = select.querySelector('.select__icon');
-        if (e.target !== selectHeader && e.target !== selectCurrent && e.target !== selectIcon) {
-            select.classList.remove('_active');
-        }
-    });
-};
+}
+;
 const scrollDown = document.querySelector('.scroll-down');
 if (scrollDown) {
     const fls = document.querySelector('.fullscreen');
@@ -69,55 +76,63 @@ if (scrollDown) {
         });
     }
 };
-const sliders = document.querySelectorAll('.slider');
+const sliders = document.querySelectorAll('.slider__body');
 if (sliders.length > 0) {
     for (let index = 0; index < sliders.length; index++) {
         const slider = sliders[index];
-        window.addEventListener('resize', sliderChange);
         function sliderChange() {
             new Swiper(slider, {
-                navigation: {
-                    nextEl: '.slider__next',
-                },
-                pagination: {
-                    // *Пагинация
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
+                observer: true,
+                observeParents: true,
                 effect: "coverflow",
-                // loop: true,
                 slidesPerView: 'auto',
-                // centeredSlides: true,
-                simulateTouch: true,
                 coverflowEffect: {
                     rotate: 0,
-                    stretch: 45,
-                    depth: 110,
+                    stretch: 110,
+                    depth: 100,
                     slideShadows: false,
-                    modifier: 6,
-                    spaceBetween: -400,
+                    modifier: 3,
+                },
+                speed: 500,
+                navigation: {
+                    nextEl: '.nav-slider__arrow_next',
+                    prevEl: '.nav-slider__arrow_prev',
+                },
+                pagination: {
+                    el: '.slider__dotts',
+                    clickable: true,
                 },
                 breakpoints: {
-                    280: {
-                        simulateTouch: false,
-                        spaceBetween: -150,
+                    0: {
                         coverflowEffect: {
-                            stretch: 15,
-                            depth: 100,
+                            stretch: 59,
+                            depth: 30,
                         },
-                    },
-                    767: {
                         spaceBetween: 0,
+                    },
+                    479.98: {
                         coverflowEffect: {
-                            stretch: 43,
+                            stretch: 85,
+                            depth: 90,
+                        },
+                        spaceBetween: 0,
+                    },
+                    767.98: {
+                        coverflowEffect: {
+                            stretch: 69,
+                            depth: 90,
+                        },
+                        spaceBetween: 0,
+                    },
+                    991.98: {
+                        coverflowEffect: {
+                            stretch: 90,
                             depth: 100,
                         },
+                        spaceBetween: -70,
                     },
-                    992: {
-                        spaceBetween: -300,
-                    },
-                    1212: {
-                        spaceBetween: -400,
+                    1222: {
+                        spaceBetween: -120,
                     }
                 }
             });
@@ -278,3 +293,68 @@ if (animItems.length > 0) {
     }, 300);
 };
 
+// * LazyLoading
+const lazyImages = document.querySelectorAll('img[data-lazy]');
+const windowHieght = document.documentElement.clientHeight;
+const lazyLimit = 10;
+let lazyImagesPositions = [];
+
+window.addEventListener('scroll', lazyScroll);
+function lazyScroll() {
+	if (lazyImages.length > 0) {
+		lazyScrollCheck();
+	}
+}
+if (lazyImages.length > 0) {
+	for (let index = 0; index < lazyImages.length; index++) {
+		const lazyImage = lazyImages[index];
+		if (lazyImage.dataset.lazy || lazyImage.dataset.lazyset) {
+			lazyImagesPositions.push(lazyImage.getBoundingClientRect().top + pageYOffset - (windowHieght / lazyLimit));
+			lazyScrollCheck();
+		}
+	}
+}
+
+// image lazy
+function lazyScrollCheck() {
+	let imgIndex = lazyImagesPositions.findIndex(
+		item => pageYOffset > item - windowHieght
+	);
+	if (imgIndex >= 0) {
+		if (lazyImages[imgIndex].dataset.lazy) {
+			lazyImages[imgIndex].src = lazyImages[imgIndex].dataset.lazy;
+			lazyImages[imgIndex].removeAttribute('data-lazy');
+			if (lazyImages[imgIndex].previousElementSibling) {
+				const webp = lazyImages[imgIndex].previousElementSibling;
+				if (webp.tagName == 'SOURCE') {
+					const dataImgSrc = lazyImages[imgIndex].getAttribute('src').split('.');
+					dataImgSrc[1] = 'webp'
+					const dataImgSrcWebp = dataImgSrc.join('.');
+					webp.setAttribute('srcset', dataImgSrcWebp);
+					webp.removeAttribute('data-srcset');
+				}
+			}
+		}
+		delete lazyImagesPositions[imgIndex]
+	}
+}
+
+const parent_original = document.querySelector('.contact__content');
+const parent = document.querySelector('.contact');
+const item = document.querySelector('.contact__img');
+function dinamicAdaptive(e) {
+	if (e.matches) {
+		if (!item.classList.contains('done')) {
+			parent.insertBefore(item, parent.children[0])
+			item.classList.add('done')
+		}
+	} else {
+		if (item.classList.contains('done')) {
+			parent_original.insertBefore(item, parent_original.children[0])
+			item.classList.remove('done')
+		}
+	}
+}
+const mediaWidth = window.matchMedia('(max-width: 767.98px)');
+mediaWidth.addListener(dinamicAdaptive)
+dinamicAdaptive(mediaWidth); 
