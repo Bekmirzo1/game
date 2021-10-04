@@ -67,11 +67,12 @@ if (scrollDown) {
     const fls = document.querySelector('.fullscreen');
     if (fls) {
         scrollDown.addEventListener('click', function (e) {
-            const flsBottom = fls.getBoundingClientRect().bottom + pageYOffset;
-            window.scrollTo({
-                top: flsBottom,
-                behavior: 'smooth'
-            })
+            const moveTo = new MoveTo({
+                tolerance: 0,
+                duration: 500,
+                easing: 'easeOutQuart'
+            });
+            moveTo.move(fls.nextElementSibling);
             e.preventDefault();
         });
     }
